@@ -1,48 +1,58 @@
-import React, { PropsWithChildren } from "react"
-import { WlAppbar, WlButton } from "@wilfredlopez/react"
-import { NavLink, Link, useHistory } from "react-router-dom"
+import {
+  WlAppbar,
+  WlButton,
+  WlDrawer,
+  WlDrawerBody,
+  WlDrawerCloseButton,
+  WlDrawerContent,
+  WlDrawerFooter,
+  WlDrawerHeader,
+} from "@wilfredlopez/react"
+import React, { PropsWithChildren, useState } from "react"
+import { Link } from "react-router-dom"
+import MenuItem from "./MenuItem"
 
 interface Props extends PropsWithChildren<{}> {
   title: string
 }
 
 const AppHeader = ({ title, children }: Props) => {
-  const history = useHistory()
+  const [isOpen, setIsOpen] = useState(false)
+  const drawerRef = React.useRef<HTMLWlDrawerElement>(null)
+
+  React.useEffect(() => {
+    if (drawerRef.current) {
+      if (drawerRef.current.isOpen === false) {
+        document.body.style.overflow = ""
+      }
+    }
+  }, [drawerRef, isOpen])
+
   return (
     <WlAppbar>
+      <WlDrawer
+        ref={drawerRef}
+        isOpen={isOpen}
+        onDrawerOpenStateChange={(e) => {
+          setIsOpen(e.detail.isOpen)
+        }}
+      >
+        <WlDrawerContent>
+          <WlDrawerHeader>Menu</WlDrawerHeader>
+          <WlDrawerCloseButton color="light" />
+          <WlDrawerBody className="wl-no-padding">
+            <MenuItem title="Home" href="/" />
+            <MenuItem title="ShowCase" href="/showcase" />
+          </WlDrawerBody>
+          <WlDrawerFooter fixed>
+            <p>@Wilfredlopez/react</p>
+          </WlDrawerFooter>
+        </WlDrawerContent>
+      </WlDrawer>
       <h1 className="wl-no-margin">
         <Link to="/">{title}</Link>
       </h1>
-      <ul>
-        <li>
-          <NavLink to="/">
-            <WlButton
-              variant="outline"
-              color="dark"
-              onClick={(e) => {
-                e.preventDefault()
-                history.replace("")
-              }}
-            >
-              Home
-            </WlButton>
-          </NavLink>
 
-          <NavLink to="/showcase" className="wl-margin-start">
-            <WlButton
-              variant="outline"
-              color="dark"
-              onClick={(e) => {
-                e.preventDefault()
-                history.replace("/showcase")
-              }}
-            >
-              ShowCase
-            </WlButton>
-          </NavLink>
-        </li>
-        <li></li>
-      </ul>
       {children}
       <div className="wl-hide-sm-down">
         <WlButton

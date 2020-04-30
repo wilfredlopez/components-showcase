@@ -1,6 +1,6 @@
 import React from "react"
 import Router from "./Router"
-import { WlAppbar } from "@wilfredlopez/react"
+import { WlAppbar, WlText } from "@wilfredlopez/react"
 
 function App() {
   return (
@@ -8,9 +8,7 @@ function App() {
       <Router />
       <WlAppbar color="medium">
         <footer>
-          <h1 color="dark" className="wl-padding-start">
-            @wilfredlopez/react
-          </h1>
+          <WlText color="dark" className="wl-padding-start">@wilfredlopez/react</WlText>
         </footer>
       </WlAppbar>
     </div>

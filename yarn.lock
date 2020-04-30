@@ -1718,18 +1718,18 @@
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
 
-"@wilfredlopez/react@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@wilfredlopez/react/-/react-0.0.6.tgz#299d6f11c7c6988ed8c87c85e3365c6c00a61840"
-  integrity sha512-D1M9YG9lC/ZyneJpOSpyOMF5hu3LPE5G9jINKPpmqidWq7PfAAKEOR1eQGDwPq34J7h4wECVI6k5IofwDH8B8g==
+"@wilfredlopez/react@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@wilfredlopez/react/-/react-0.1.0.tgz#bc60be05d5563829abef1da5e72f928d76d60d49"
+  integrity sha512-hnIlMKL/0DfIDunWK/XRZhwtyd1JRfkI6/WWLYPYmZwq1AzRg9Wxokk7fUTNYlhtO+BPysMRXHs/RCtnKW3cxg==
   dependencies:
-    "@wilfredlopez/wl-components" "^0.1.5"
+    "@wilfredlopez/wl-components" "^0.1.9"
     tslib "*"
 
-"@wilfredlopez/wl-components@^0.1.5":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@wilfredlopez/wl-components/-/wl-components-0.1.5.tgz#63d7dd11e4323a78e2ca6cb3d0175748a2d09113"
-  integrity sha512-acrkxFTVfGj0k+T4i2VKJokIaw50W/h/ih6JMQOlSok48xXlrLYuOEK86hdy4YIfu3MMFUrzH3yOSOBidbcHIQ==
+"@wilfredlopez/wl-components@^0.1.9":
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/@wilfredlopez/wl-components/-/wl-components-0.1.9.tgz#302f3a432d86876c11013f9f82a889f6612d28c8"
+  integrity sha512-0y9qFw5lSuxXiica1fh7b5v1ptaHH1tgKC54gc1VzqtKouXBLbnZeOt8/n3LLC1OPbzS6DLtJPZPv9ln/xC/xw==
   dependencies:
     tslib "^1.11.1"
 
